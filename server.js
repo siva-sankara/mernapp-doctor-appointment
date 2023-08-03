@@ -18,12 +18,12 @@ const app = express();
 app.use(express.json());   //body parser
 app.use(cookieParser())
 
-app.use(
-	cors({
-		origin: "*",
-		credentials: true,
-	})
-);
+// app.use(
+// 	cors({
+// 		origin: "*",
+// 		credentials: true,
+// 	})
+// );
 //static files
 app.use(express.static(path.join(__dirname,'./client/build')))
  
