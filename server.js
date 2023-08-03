@@ -18,18 +18,18 @@ const app = express();
 app.use(express.json());   //body parser
 app.use(cookieParser())
 
-// app.use(
-// 	cors({
-// 		origin: "*",
-// 		credentials: true,
-// 	})
-// );
+app.use(
+	cors({
+		origin: "*",
+		credentials: true,
+	})
+);
 //static files
-// app.use(express.static(path.join(__dirname,'./client/build')))
+app.use(express.static(path.join(__dirname,'./client/build')))
  
-// app.get('*',(req,res)=>{
-//     res.sendFile(path.join(__dirname ,'./client/build/index.html'))
-// });
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname ,'./client/build/index.html'))
+});
 
 //routes
 app.use('/api/v1/user',require('./routes/userrRoutes'))
